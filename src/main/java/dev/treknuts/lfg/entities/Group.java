@@ -1,7 +1,5 @@
 package dev.treknuts.lfg.entities;
 
-import com.sun.jna.Platform;
-
 public class Group {
 
     private int id;
@@ -9,16 +7,17 @@ public class Group {
     private String description;
     private String author;
     private int playersWanted;
-    private
+    private Platform platform;
 
     public Group() {
     }
 
-    public Group(String title, String description, String author, int playersWanted) {
+    public Group(String title, String description, String author, int playersWanted, Platform platform) {
         this.title = title;
         this.description = description;
         this.author = author;
         this.playersWanted = playersWanted;
+        this.platform = platform;
     }
 
     public int getId() {
@@ -59,6 +58,6 @@ public class Group {
 
     @Override
     public String toString() {
-        return String.format("User %s needs");
+        return String.format("%s needs %x players to play Rainbow Six Siege on %s", author, playersWanted, platform);
     }
 }
